@@ -1,0 +1,49 @@
+[
+  {
+    "model": "employee.employees",
+    "pk": 20,
+    "fields": {
+      "username": "joshi290",
+      "password": "pbkdf2_sha256$1000000$XTSzDDNvDS3WrdkokmCdq8$VRh/t6mIUoYFCKSd0xN2ystk4ynv15NbEzM0CRp4p+E=",
+      "is_superuser": false,
+      "is_staff": true,
+      "is_active": true,
+      "email": "joshika@gmail.com",
+      "first_name": "Joshika",
+      "middle_name": "",
+      "last_name": "S",
+      "employee_internal_id": "EMP42",
+      "phone": "8752161154",
+      "nationality": "Indian",
+      "state": "Kerala",
+      "city": "Kozhikode",
+      "permanent_address": "123 Main St",
+      "current_address": "123 Main St",
+      "date_of_birth": "2003-10-20",
+      "gender": "Female",
+      "blood_group": "B+",
+      "marital_status": "Married",
+      "date_of_joining": "2025-01-01",
+      "profile_picture": null,
+      "employment_type": "Full Time",
+      "employment_status": "Confirmed",
+      "company": 1,
+      "created_at": "2025-11-12T10:00:00Z",
+      "updated_at": "2025-11-12T10:00:00Z"
+    }
+  },
+  {
+    "model": "employee.employeedetails",
+    "pk": 20,
+    "fields": {
+      "employee": 20,
+      "department": 1,
+      "designation": 1,
+      "date_of_confirmation": "2025-01-15",
+      "reporting_manager": 7,
+      "work_location": "Thejaswini Building",
+      "created_at": "2025-11-12T10:05:00Z",
+      "updated_at": "2025-11-12T10:05:00Z"
+    }
+  }
+]

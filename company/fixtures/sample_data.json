@@ -1,0 +1,491 @@
+[
+    {
+        "model": "employee.employees",
+        "pk": 1,
+        "fields": {
+            "username": "adminuser",
+            "password": "pbkdf2_sha256$1000000$1dTBAQGX3Iq6b8jwfF26ov$GjiqjRZO4510hFeinONXDZvGb4ugnGVTMDRqVFbdaSo=",
+            "is_superuser": true,
+            "email": "admin@hrms.net",
+            "first_name": "Admin",
+            "last_name": "User",
+            "is_staff": true,
+            "company": 1
+        }
+    },
+    {
+        "model": "employee.employeedetails",
+        "pk": 1,
+        "fields": {
+            "employee": 1,
+            "department": 1,
+            "designation": 1,
+            "date_of_confirmation": "2025-12-01",
+            "reporting_manager": null,
+            "work_location": "Headquarters",
+            "created_at": "2025-01-01T10:00:00Z",
+            "updated_at": "2025-01-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "company.companies",
+        "pk": 1,
+        "fields": {
+            "name": "Scalgo Technologies Pvt Ltd",
+            "registration_number": "REG1234567",
+            "tax_id": "TAX1234567",
+            "address": "First Floor, M Squared Building, Annex 1, Technopark Campus, Karyavattom, Thiruvananthapuram",
+            "country": "India",
+            "city": "Kazhakootam, Trivandrum",
+            "state": "Kerala",
+            "postal_code": "686545",
+            "email": "contact@testcorp.com",
+            "phone": "9986054995",
+            "website": "https://www.scalgo.net/",
+            "industry": "Information Technology",
+            "number_of_employees": 50,
+            "subscription_type": "Premium",
+            "admin_user": 1
+        }
+    },
+    {
+        "model": "company.departments",
+        "pk": 1,
+        "fields": {
+            "name": "Software Development",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.departments",
+        "pk": 2,
+        "fields": {
+            "name": "Software Testing",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.departments",
+        "pk": 3,
+        "fields": {
+            "name": "Sales & Marketing",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.departments",
+        "pk": 4,
+        "fields": {
+            "name": "UI/UX",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.departments",
+        "pk": 5,
+        "fields": {
+            "name": "Accounts",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 1,
+        "fields": {
+            "name": "Software Engineer",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 2,
+        "fields": {
+            "name": "Software Trainee Engineer",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 3,
+        "fields": {
+            "name": "Software Software Engineer",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 4,
+        "fields": {
+            "name": "Lead Engineer",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 5,
+        "fields": {
+            "name": "Business Analyst",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 6,
+        "fields": {
+            "name": "Sales Executive",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.designations",
+        "pk": 7,
+        "fields": {
+            "name": "Project Manager",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 1,
+        "fields": {
+            "name": "Casual Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 2,
+        "fields": {
+            "name": "Sick Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 3,
+        "fields": {
+            "name": "Annual Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.holidays",
+        "pk": 1,
+        "fields": {
+            "name": "New Year's Day",
+            "company": 1,
+            "date": "2026-01-01",
+            "type": "Public"
+        }
+    },
+    {
+        "model": "company.holidays",
+        "pk": 1,
+        "fields": {
+            "name": "Onam",
+            "company": 1,
+            "date": "2026-08-26",
+            "type": "Public"
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 1,
+        "fields": {
+            "company": 1,
+            "name": "Basic Pay",
+            "type": "Earning",
+            "is_mandatory": true,
+            "percentage": null,
+            "description": "Basic monthly salary component"
+        }
+    },
+    {
+        "model": "company.Countries",
+        "pk": 1,
+        "fields": {
+            "name": "India",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.States",
+        "pk": 1,
+        "fields": {
+            "name": "Kerala",
+            "country": 1
+        }
+    },
+    {
+        "model": "company.States",
+        "pk": 2,
+        "fields": {
+            "name": "Tamil Nadu",
+            "country": 1
+        }
+    },
+    {
+        "model": "company.States",
+        "pk": 3,
+        "fields": {
+            "name": "Karnataka",
+            "country": 1
+        }
+    },
+    {
+        "model": "company.States",
+        "pk": 4,
+        "fields": {
+            "name": "Andhra Pradesh",
+            "country": 1
+        }
+    },
+    {
+        "model": "company.States",
+        "pk": 5,
+        "fields": {
+            "name": "Telangana",
+            "country": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 1,
+        "fields": {
+            "name": "Basic Pay",
+            "type": "Earning",
+            "is_mandatory": true,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 2,
+        "fields": {
+            "name": "Dearness Allowance",
+            "type": "Earning",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 3,
+        "fields": {
+            "name": "House Rent Allowance",
+            "type": "Earning",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 4,
+        "fields": {
+            "name": "Conveyance Allowance",
+            "type": "Earning",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 5,
+        "fields": {
+            "name": "Medical Allowance",
+            "type": "Earning",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 6,
+        "fields": {
+            "name": "Special Allowance",
+            "type": "Earning",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 4,
+        "fields": {
+            "name": "Maternity Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 5,
+        "fields": {
+            "name": "Paternity Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 6,
+        "fields": {
+            "name": "Marriage Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 7,
+        "fields": {
+            "name": "Earned Leave",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.leavetypes",
+        "pk": 8,
+        "fields": {
+            "name": "Loss of Pay",
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 7,
+        "fields": {
+            "name": "PF",
+            "type": "Deduction",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.salarycomponents",
+        "pk": 8,
+        "fields": {
+            "name": "ESI",
+            "type": "Deduction",
+            "is_mandatory": false,
+            "company": 1
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 1,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 1,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 2,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 2,
+            "effective_days": 28
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 3,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 3,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 4,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 4,
+            "effective_days": 30
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 5,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 5,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 6,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 6,
+            "effective_days": 30
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 7,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 7,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 8,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 8,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 9,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 9,
+            "effective_days": 30
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 10,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 10,
+            "effective_days": 31
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 11,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 11,
+            "effective_days": 30
+        }
+    },
+    {
+        "model": "company.monthlyeffectivedays",
+        "pk": 12,
+        "fields": {
+            "company": 1,
+            "year": 2025,
+            "month": 12,
+            "effective_days": 31
+        }
+    }
+]

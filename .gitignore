@@ -1,0 +1,22 @@
+# Python bytecode
+*.py[cod]
+__pycache__/
+
+# Environment variable
+.env
+
+# Virtual environment folders
+venv/
+.venv/
+
+# Database files 
+db.sqlite3
+
+# Editor folders and files
+.vscode/
+
+# Cache files
+.cache/
+
+# static
+static/

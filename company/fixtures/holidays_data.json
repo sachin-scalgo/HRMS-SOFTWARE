@@ -1,0 +1,54 @@
+[
+  {
+    "model": "company.holidays",
+    "pk": 1,
+    "fields": {
+        "name": "Onam",
+        "company": 1,
+        "date": "2026-08-26",
+        "type": "Public"
+    }
+  },
+  {
+    "model": "company.holidays",
+    "pk": 2,
+    "fields": {
+        "name": "Holi",
+        "company": 1,
+        "date": "2026-03-04",
+        "type": "Company"
+    }
+  },
+  {
+    "model": "company.holidays",
+    "pk": 3,
+    "fields": {
+        "name": "Makar Sankranti",
+        "company": 1,
+        "date": "2026-01-14",
+        "type": "Company"
+    }
+  },
+  {
+    "model": "company.holidays",
+    "pk": 4,
+    "fields": {
+        "name": "Id-ul-Fitr",
+        "company": 1,
+        "date": "2026-03-21",
+        "type": "Public"
+    }
+  },
+  {
+    "model": "company.holidays",
+    "pk": 5,
+    "fields": {
+        "name": "Republic Day",
+        "company": 1,
+        "date": "2026-01-26",
+        "type": "Public"
+    }
+  }
+
+
+]

@@ -1,0 +1,736 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin2 </title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/typicons/typicons.css' %}">
+    <link rel="stylesheet"
+        href="{% static 'staradmin2/dist/assets/vendors/simple-line-icons/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/vendors/css/vendor.bundle.base.css' %}">
+    <link rel="stylesheet"
+        href="{% static 'staradmin2/dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet"
+        href="{% static 'staradmin2/dist/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'staradmin2/dist/assets/js/select.dataTables.min.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'staradmin2/dist/assets/css/style.css' %}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{% static 'staradmin2/dist/assets/images/favicon.png' %}" />
+</head>
+
+<body class="with-welcome-text">
+    <div class="container-scroller">
+        <div class="row p-0 m-0 proBanner" id="proBanner">
+            <div class="col-md-12 p-0 m-0">
+                <div class="card-body card-body-padding px-3 d-flex align-items-center justify-content-between">
+                    <div class="ps-lg-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="mb-0 fw-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more
+                                with this template!</p>
+                            <a href="https://www.bootstrapdash.com/product/star-admin-pro/" target="_blank"
+                                class="btn me-2 buy-now-btn border-0">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="https://www.bootstrapdash.com/product/star-admin-pro/"><i
+                                class="ti-home me-3 text-white"></i></a>
+                        <button id="bannerClose" class="btn border-0 p-0">
+                            <i class="ti-close text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <div class="me-3">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-bs-toggle="minimize">
+                        <span class="icon-menu"></span>
+                    </button>
+                </div>
+                <div>
+                    <a class="navbar-brand brand-logo" href="{% static 'staradmin2/dist/index.html' %}">
+                        <img src="{% static 'staradmin2/dist/assets/images/logo.svg' %}" alt="logo" />
+                    </a>
+                    <a class="navbar-brand brand-logo-mini" href="{% static 'staradmin2/dist/index.html' %}">
+                        <img src="{% static 'staradmin2/dist/assets/images/logo-mini.svg' %}" alt="logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+                <ul class="navbar-nav">
+                    <li class="nav-item fw-semibold d-none d-lg-block ms-0">
+                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold user_fullname"></span>
+                        </h1>
+
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item">
+                        <form class="search-form" action="#">
+                            <i class="icon-search"></i>
+                            <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                        </form>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator" id="notificationDropdown" href="#"
+                            data-bs-toggle="dropdown">
+                            <i class="icon-bell"></i>
+                            <span class="count"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                            aria-labelledby="notificationDropdown">
+                            <a class="dropdown-item py-3 border-bottom">
+                                <p class="mb-0 fw-medium float-start">You have 4 new notifications </p>
+                                <span class="badge badge-pill badge-primary float-end">View all</span>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-alert m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject fw-normal text-dark mb-1">Application Error</h6>
+                                    <p class="fw-light small-text mb-0"> Just now </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-lock-outline m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject fw-normal text-dark mb-1">Settings</h6>
+                                    <p class="fw-light small-text mb-0"> Private message </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject fw-normal text-dark mb-1">New user registration</h6>
+                                    <p class="fw-light small-text mb-0"> 2 days ago </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                        <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle"
+                                src="{% static 'staradmin2/dist/assets/images/faces/face8.jpg' %}" alt="Profile image">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <div class="dropdown-header text-center">
+                                <img class="img-md rounded-circle"
+                                    src="{% static 'staradmin2/dist/assets/images/faces/face8.jpg' %}"
+                                    alt="Profile image">
+                                <p class="mb-1 mt-3 fw-semibold" class="user_fullname">Allen Moreno</p>
+                                <p class="fw-light text-muted mb-0" class="user_email">allenmoreno@gmail.com</p>
+                            </div>
+                            <a class="dropdown-item" id="user_profile"><i
+                                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
+                                <span class="badge badge-pill badge-danger">1</span></a>
+                            <a class="dropdown-item"><i
+                                    class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i>
+                                Messages</a>
+                            <a class="dropdown-item"><i
+                                    class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i>
+                                Activity</a>
+                            <a class="dropdown-item"><i
+                                    class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
+                                FAQ</a>
+                            <a class="dropdown-item" id="sign-out"><i
+                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% static 'staradmin2/dist/index.html' %}">
+                            <i class="mdi mdi-grid-large menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-category admin-only">Menu</li>
+                    <li class="nav-item admin-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="menu-icon mdi mdi-account-group"></i>
+                            <span class="menu-title">Manage Employees</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'list-employees' %}">Overview</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/ui-features/dropdowns.html' %}">Create</a>
+                                </li>
+                                <!-- <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/ui-features/typography.html' %}">Typography</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
+                            aria-controls="form-elements">
+                            <i class="menu-icon mdi mdi-cash-multiple"></i>
+                            <span class="menu-title">Payroll</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="form-elements">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/forms/basic_elements.html' %}">Manage
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item admin-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false"
+                            aria-controls="charts">
+                            <i class="menu-icon mdi mdi-chart-line"></i>
+                            <span class="menu-title">Charts</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/charts/chartjs.html' %}">ChartJs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item admin-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
+                            aria-controls="tables">
+                            <i class="menu-icon mdi mdi-table"></i>
+                            <span class="menu-title">Tables</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/tables/basic-table.html' %}">Basic
+                                        table</a></li>
+                            </ul>
+                        </div>
+                    </li> -->
+                    <li class="nav-item employee-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false"
+                            aria-controls="icons">
+                            <i class="menu-icon mdi mdi-layers-outline"></i>
+                            <span class="menu-title">Icons</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="icons">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/icons/font-awesome.html' %}">Font
+                                        Awesome</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item employee-only">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false"
+                            aria-controls="auth">
+                            <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                            <span class="menu-title">User Pages</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/samples/blank-page.html' %}"> Blank
+                                        Page </a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/samples/error-404.html' %}"> 404 </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/samples/error-500.html' %}"> 500 </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/samples/login.html' %}"> Login </a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% static 'staradmin2/dist/pages/samples/register.html' %}"> Register
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item employee-only">
+                        <a class="nav-link" href="docs/documentation.html">
+                            <i class="menu-icon mdi mdi-file-document"></i>
+                            <span class="menu-title">Documentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="home-tab">
+                                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+
+                                </div>
+                                <div class="tab-content tab-content-basic">
+                                    <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                        aria-labelledby="overview">
+
+                                        <div class="row">
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Manage Employees</h4>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th> Name </th>
+                                                                        <th> email </th>
+                                                                        <th> Phone </th>
+                                                                        <th> Employee ID </th>
+                                                                        <th> Designation </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="employee-list">
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face1.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> Herman Beck </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-success"
+                                                                                    role="progressbar"
+                                                                                    style="width: 25%"
+                                                                                    aria-valuenow="25" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $ 77.99 </td>
+                                                                        <td> May 15, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face2.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> Messsy Adam </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-danger"
+                                                                                    role="progressbar"
+                                                                                    style="width: 75%"
+                                                                                    aria-valuenow="75" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $245.30 </td>
+                                                                        <td> July 1, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face3.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> John Richards </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-warning"
+                                                                                    role="progressbar"
+                                                                                    style="width: 90%"
+                                                                                    aria-valuenow="90" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $138.00 </td>
+                                                                        <td> Apr 12, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face4.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> Peter Meggik </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-primary"
+                                                                                    role="progressbar"
+                                                                                    style="width: 50%"
+                                                                                    aria-valuenow="50" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $ 77.99 </td>
+                                                                        <td> May 15, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face5.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> Edward </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-danger"
+                                                                                    role="progressbar"
+                                                                                    style="width: 35%"
+                                                                                    aria-valuenow="35" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $ 160.25 </td>
+                                                                        <td> May 03, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face6.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> John Doe </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-info"
+                                                                                    role="progressbar"
+                                                                                    style="width: 65%"
+                                                                                    aria-valuenow="65" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $ 123.21 </td>
+                                                                        <td> April 05, 2015 </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="py-1">
+                                                                            <img src="../../assets/images/faces/face7.jpg"
+                                                                                alt="image" />
+                                                                        </td>
+                                                                        <td> Henry Tom </td>
+                                                                        <td>
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar bg-warning"
+                                                                                    role="progressbar"
+                                                                                    style="width: 20%"
+                                                                                    aria-valuenow="20" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td> $ 150.00 </td>
+                                                                        <td> June 16, 2015 </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a
+                                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from
+                            BootstrapDash.</span>
+                        <span class="float-none float-sm-end d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All
+                            rights reserved.</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'staradmin2/dist/assets/vendors/js/vendor.bundle.base.js' %}"></script>
+    <script
+        src="{% static 'staradmin2/dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'staradmin2/dist/assets/vendors/chart.js/chart.umd.js' %}"></script>
+    <script src="{% static 'staradmin2/dist/assets/vendors/progressbar.js/progressbar.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'staradmin2/dist/assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'staradmin2/dist/assets/js/template.js' %}"></script>
+    <script src="{% static 'staradmin2/dist/assets/js/settings.js' %}"></script>
+    <script src="{% static 'staradmin2/dist/assets/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'staradmin2/dist/assets/js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'staradmin2/dist/assets/js/jquery.cookie.js' %}" type="text/javascript"></script>
+    <script src="{% static 'staradmin2/dist/assets/js/dashboard.js' %}"></script>
+    <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+    <!-- End custom js for this page-->
+    <script>
+        document.getElementById('sign-out').addEventListener('click', function (e) {
+            e.preventDefault();
+            const refreshToken = localStorage.getItem('refresh_token');
+
+            if (!refreshToken) {
+                alert('No refresh token found. Logout failed.');
+                return;
+            }
+
+            fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: JSON.stringify({ refresh: refreshToken }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'Logged out successfully.') {
+                        localStorage.removeItem('access_token');
+                        localStorage.removeItem('refresh_token');
+                        window.location.href = '/login/';
+                    }
+                })
+                .catch(error => console.error('Logout error:', error));
+        });
+
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (const cookie of cookies) {
+                    const trimmed = cookie.trim();
+                    if (trimmed.startsWith(name + '=')) {
+                        cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        async function getUserProfile() {
+            try {
+                const accessToken = localStorage.getItem('access_token');
+
+                if (!accessToken) {
+                    window.location.href = '/login/';
+                    return;
+                }
+
+                const response = await fetch('/employee/profile', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const userData = await response.json();
+                return userData;
+            } catch (error) {
+                console.error('Failed to fetch user profile:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await getUserProfile();
+            let company = null;
+            if (user) {
+                document.getElementsByClassName('user_fullname').textContent = `${user.first_name} ${user.last_name}`;
+                document.querySelector('.user_fullname').textContent = `${user.first_name} ${user.last_name}`;
+                document.getElementsByClassName('user_email').textContent = user.email;
+                company = user.company || null;
+                // alert(company)
+                // const filterOption = document.getElementById('filter_option').value || null;
+                // const filterValue = document.getElementById('filter_value').value || null;
+
+                const isAdmin = user.admin
+                if (isAdmin) {
+                    document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'block');
+                    document.querySelectorAll('.employee-only').forEach(el => el.style.display = 'none');
+                } else if (!isAdmin) {
+                    document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'none');
+                    document.querySelectorAll('.employee-only').forEach(el => el.style.display = 'block');
+                }
+            }
+            console.log('Company value:', company, typeof company);
+            loadEmployeesIntoTable({
+                company: company,
+                // filter_option: filterOption,
+                // filter_value: filterValue,
+                current_page: 1,
+                limit: 10
+            });
+        });
+
+
+
+        async function loadEmployeesIntoTable({ company, filter_option, filter_value, current_page = 1, limit = 10 } = {}) {
+            const tbody = document.getElementById('employee-list');
+            if (!tbody) return;
+
+            tbody.innerHTML = `
+        <tr>
+            <td colspan="5" class="text-center">Loading employees...</td>
+        </tr>
+    `;
+
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-danger text-center">
+                    Not authenticated. Please log in again.
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            const params = new URLSearchParams();
+            params.append('company', company);
+            const fullUrl = `/employee/?${params.toString()}`;
+            let response;
+            try {
+                response = await fetch(fullUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': 'application/json',
+                    },
+                });
+            } catch (err) {
+                console.error('Network error:', err);
+                tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-danger text-center">
+                    Network error. Please try again.
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            if (!response.ok) {
+                if (response.status === 401) {
+                    localStorage.removeItem('access_token');
+                    tbody.innerHTML = `
+                <tr>
+                    <td colspan="5" class="text-danger text-center">
+                        Session expired. Please log in again.
+                    </td>
+                </tr>
+            `;
+                    return;
+                }
+
+                let msg = '';
+                try {
+                    const errData = await response.json();
+                    msg = errData.detail || errData.message || '';
+                } catch (_) { }
+                tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-danger text-center">
+                    ${msg || `Error loading employees (HTTP ${response.status}).`}
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            let employees;
+            try {
+                employees = await response.json();
+            } catch (err) {
+                console.error('Parse error:', err);
+                tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-danger text-center">
+                    Invalid data from server.
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            if (!Array.isArray(employees) || employees.length === 0) {
+                tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="text-center">
+                    No employees found.
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            // This loop + one innerHTML assignment is the “standard” pattern
+            let rowsHtml = '';
+            employees.forEach(emp => {
+                const fullName = `${emp.first_name || ''} ${emp.last_name || ''}`.trim() || 'N/A';
+                const email = `${emp.email || ''}` || 'N/A';
+                const phone = `${emp.phone || ''}` || 'N/A';
+                const internal_id = `${emp.employee_internal_id || ''}` || 'N/A';
+                const designation = `${emp.designation_name || ''}` || 'N/A';
+
+                rowsHtml += `
+                    < tr >
+                <td class="py-1">
+                    
+                </td>
+                <td>${fullName}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
+                <td>${internal_id}</td>
+                <td>${designation}</td>
+            </tr >
+        `;
+            });
+
+            tbody.innerHTML = rowsHtml;
+        }
+    </script>
+</body>
+
+</html>
